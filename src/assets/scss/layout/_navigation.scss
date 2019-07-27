@@ -1,0 +1,133 @@
+
+.navbar{
+  flex-wrap: wrap;
+  padding: 2.25rem 0;
+  &-nav{
+    flex-wrap: wrap;
+
+
+
+  }
+
+  .dropdown-menu {
+
+    position: relative;
+    float: none;
+    top: unset;
+    border-radius: unset;
+    margin-top: 0;
+    margin-left: -1px;
+    margin-right: -1px;
+    background-color: $red700;
+    width:100%;
+    padding: 0;
+
+  }
+
+  .dropdown-item{
+    color: $white;
+    padding: 0.62rem 2.25rem;
+
+    &:hover{
+      background-color: $red600;
+    }
+
+
+  }
+
+}
+
+.dropdown-toggle::after{
+  float: right;
+  margin-top: 8px;
+}
+
+
+
+
+
+
+.nav-item{
+  width: 100%;
+
+  &.active{
+    a{
+      background-color: $red700
+    }
+  }
+
+}
+
+.nav-link, .navbar-expand-sm .navbar-nav .nav-link{
+  color: $white;
+  padding: 0.62rem 1.5rem;
+  font-size: $size-6;
+  margin: $size-8 0;
+  @include bold;
+  &[aria-expanded="true"]{
+    margin-bottom: 0;
+    background: $red600;
+
+  }
+  &:hover{
+    background: $red600;
+  }
+
+
+  i{
+    margin-right: 0.75rem
+  }
+
+
+}
+
+
+.nav{
+  flex-wrap: nowrap;
+}
+
+
+.nav-secondary{
+  .nav-item{
+    margin: 0 $size-8;
+    width: unset;
+  }
+  .nav-link{
+
+    color: $black400;
+    display: flex;
+    margin: 0;
+    letter-spacing: 0;
+
+    &.active{
+      color: $red500;
+
+      i{
+        background-color: $red500;
+      }
+    }
+
+    &:hover{
+      color: $red500;
+      background: unset;
+      i{
+        color: $red500;
+      }
+    }
+
+    i{
+      background-color: $black400;
+    }
+
+
+    @include breakpoint(sm){
+      padding: $size-9 $size-7;
+    }
+
+    @include breakpoint(xxxl){
+      padding: $size-9 $size-6 !important;
+    }
+
+  }
+
+}

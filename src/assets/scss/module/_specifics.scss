@@ -1,0 +1,43 @@
+#client{padding-right: 0}
+#client-phone{
+  margin-bottom: 0;
+  @include breakpoint(sm){
+    max-width: 304px;
+    width: 100%;
+  }
+  label{
+    font-size: $size-4;
+  }
+
+
+  .form-control-lg{
+    display: inline-block;
+    position: relative;
+    letter-spacing: 1px;
+    color: $black800;
+    @include bold;
+    @include border;
+    @include border-radius;
+
+    @include breakpoint(sm){
+      font-size: $size-4;
+      padding: 0 1rem;
+
+    }
+
+
+  }
+
+
+
+
+
+
+}
+
+#resume-navigation{
+  padding-left: 0;
+
+
+
+}

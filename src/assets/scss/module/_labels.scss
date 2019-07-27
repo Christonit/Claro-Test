@@ -1,0 +1,14 @@
+.badge{
+@include border-radius;
+  font-size: $size-6;
+  padding: $size-9 $size-5;
+}
+
+
+.status{
+
+  &-success{
+    color: $succes;
+    background: $succes-light;
+  }
+}

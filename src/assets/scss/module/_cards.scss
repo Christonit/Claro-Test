@@ -1,0 +1,26 @@
+.card{
+  @include border;
+  @include border-radius;
+  background: $white;
+  padding: $size-3;
+}
+
+
+.card-info{
+  margin-bottom: $size-4;
+}
+
+
+.card-label{
+  size: $size-4;
+  color: $black400;
+  line-height: 1.2;
+  @include bold;
+}
+
+
+.report-value{
+  font-size: $size-4;
+  color: $black800;
+  @include medium;
+}

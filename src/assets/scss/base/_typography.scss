@@ -1,0 +1,24 @@
+
+body{
+}
+p{
+    @include paragraph;
+}
+
+h4{
+  color: $black800;
+}
+
+a{
+  @include font;
+  letter-spacing: 1px;
+
+}
+.overline{
+  @include font;
+  @include medium;
+  color: $black300;
+}
+
+
+

@@ -1,0 +1,29 @@
+.btn {
+  padding: $size-9 $size-5;
+  font-size: $size-6;
+  @include bold;
+  letter-spacing: 0.5px;
+}
+
+
+.btn-link{
+  color: $red500;
+  &:hover{
+    color: $red700;
+    text-decoration: none;
+  }
+}
+
+
+.btn-outline{
+  &-primary{
+    color:$red500;
+    border-color:$red500;
+
+    &:hover{
+      background:$red500 ;
+      border-color:$red500;
+      color: $red100;
+    }
+  }
+}
