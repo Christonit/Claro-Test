@@ -10,405 +10,249 @@
         <top-header></top-header>
         <!-- header area end -->
         <!-- page title area start -->
-              <title-area></title-area>
+              <title-area :resolution="resolution"></title-area>
         <!-- page title area end -->
         <div class="main-content-inner">
           <!-- sales report area start -->
-          <div class="sales-report-area ">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="card card-report">
-
-                  <div class="card-info">
-                    <span class="card-label">Plan</span>
-                    <h5 class="report-value">Smart Postpago 100</h5>
-                  </div>
-
-                  <div class="card-info">
-                    <span class="card-label">Estado</span>
-
-                    <div class="el-group">
-                      <span class="badge status-success">Activo</span>
-
-                      <a href="#" class="btn btn-link">Ver detalles</a>
-                    </div>
-
-                  </div>
-
-                  <span class="disclaimer">*Servicio factura el día 22 de cada mes.</span>
-                </div>
-              </div>
-
-
-              <div class="col-md-4">
-                <div class="card card-report">
-
-                  <div class="card-info el-group">
-
-                    <div>
-
-                      <span class="card-label">Internet</span>
-                      <h5 class="report-value">1GB</h5>
-
-                    </div>
-
-
-                    <a href="#" class="btn btn-outline-primary">Comprar paquetico</a>
-
-
-
-
-                  </div>
-
-                  <div class="card-info mt-2">
-                    <span class="progress-bar">
-                      <span class="progress-counter" style="width: 60%"></span>
-                    </span>
-
-                    <div class="el-group mt-2">
-                      <span class="card-label">Consumido <br> <mark class="black no-bg">900 mb</mark></span>
-
-
-
-                      <span class="card-label text-right">Restante<br><mark class="black no-bg p-0">100 mb</mark></span>
-
-
-                    </div>
-
-
-
-
-
-
-
-                  </div>
-
-                  <div class="el-group mt-1">
-                    <span class="card-label text-right">Total <mark class="black no-bg p-0">1GB</mark></span>
-
-                    <span class="disclaimer">*Total incluyendo rollover.</span>
-
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class="col-md-4">
-                <div class="single-report">
-                  <div class="s-report-inner pr--20 pt--30 mb-3">
-                    <div class="icon"><i class="fa fa-eur"></i></div>
-                    <div class="s-report-title d-flex justify-content-between">
-                      <h4 class="header-title mb-0">Euthorium</h4>
-                      <p>24 H</p>
-                    </div>
-                    <div class="d-flex justify-content-between pb-2">
-                      <h2>$ 4567809,987</h2>
-                      <span>- 45.87</span>
-                    </div>
-                  </div>
-                  <canvas id="coin_sales3" height="100"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
+            <data-plan v-if="resolution.windowSize <= resolution.xl" :resolution="resolution" class="row"></data-plan>
           <!-- sales report area end -->
           <!-- overview area start -->
           <div class="row">
-            <div class="col-xl-9 col-lg-8">
+            <data-plan  class="col-lg-3 px-0" :resolution='resolution' v-if="resolution.windowSize > resolution.xl"></data-plan>
+
+            <div class="col-12" :class="resolution.windowSize > resolution.xl ? 'col-lg-6':'col-lg-8'" >
+              <div class=" col-12 w-100 d-flex align-items-center justify-content-between mb-3">
+                <h6 class="ml-2">Medidor de uso</h6>
+
+                <div>
+
+                  <label class="mr-2">Comparar</label>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+
+                </div>
+
+
+              </div>
               <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="header-title mb-0">Overview</h4>
-                    <select class="custome-select border-0 pr-3">
-                      <option selected>Last 24 Hours</option>
-                      <option value="0">01 July 2018</option>
-                    </select>
+
+                <div>
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#home">Internet</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#menu1">Minutos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#menu2">SMS</a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div id="home" class="container tab-pane active">
+                      <div class="el-group mb-4">
+
+                        <div class="form-group d-flex align-items-center options-input ">
+                          <label  class="">Fecha</label>
+                          <input type="date"  class="form-control">
+                        </div>
+
+
+
+
+                        <div class="el-group">
+
+                          <div class="form-group d-flex align-items-center options-input mr-4">
+                            <label  class="">Filtrar</label>
+
+                            <select class="form-control">
+                              <option selected value="">Semana</option>
+                              <option value="">Mes</option>
+                              <option value="">Año</option>
+                            </select>
+
+                          </div>
+
+                          <div class="btn-group btn-group-toggle toggle-icons" data-toggle="buttons">
+                            <button type="button" class="btn active">
+                              <i class="sys-icon bar-chart"></i>
+                              <!--<input type="radio" name="options" id="option1" autocomplete="off" checked> Active-->
+                            </button>
+                            <button type="button" class="btn">
+                              <i class="sys-icon line-chart"></i>
+                            </button>
+
+                          </div>
+
+                        </div>
+
+
+                      </div>
+
+                      <data-usage-chart></data-usage-chart>
+
+
+                    </div>
+
+                    <div id="menu1" class="container tab-pane fade"><br>
+                      <h3>Menu 1</h3>
+                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+
+                    <div id="menu2" class="container tab-pane fade"><br>
+                      <h3>Menu 2</h3>
+                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    </div>
                   </div>
-                  <div id="verview-shart"></div>
                 </div>
+
+
+
+                <div>
+                  <ul class="nav nav-tabs">
+
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#apps-plan">Apps incluidas</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#my-apps">Mis apps</a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+
+                    <div id="apps-plan" class="container pt-2 tab-pane active">
+                        <div class="data-table">
+                              <div class="data-table-header">
+                                <span class="cell w-80">
+                                  Aplicación
+                                </span>
+
+                                <span class="cell w-20 text-center">
+                                  Uso
+                                </span>
+
+                              </div>
+
+                          <div class="data-table-row">
+                            <span class="cell w-60">
+                              <i class="icon"><img src="./assets/images/waze.png"></i>Waze
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                              <span class="progress-bar">
+                                <span class="progress-counter" style="width: 10%"></span>
+                              </span>
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                                200mb
+                            </span>
+
+                          </div>
+
+
+                          <div class="data-table-row">
+                            <span class="cell w-60">
+                              <i class="icon"><img src="./assets/images/instagram.png"></i>Instagram
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                              <span class="progress-bar">
+                                <span class="progress-counter" style="width: 40%"></span>
+                              </span>
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                                200mb
+                            </span>
+
+                          </div>
+
+                          <div class="data-table-row">
+                            <span class="cell w-60">
+                              <i class="icon"><img src="./assets/images/Whatsapp.png"></i>Whatsapp
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                              <span class="progress-bar">
+                                <span class="progress-counter" style="width: 50%"></span>
+                              </span>
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                                200mb
+                            </span>
+
+                          </div>
+
+
+                          <div class="data-table-row">
+                            <span class="cell w-60">
+                              <i class="icon"><img src="./assets/images/google-maps.png"></i>Google Maps
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                              <span class="progress-bar">
+                                <span class="progress-counter" style="width: 5%"></span>
+                              </span>
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                                200mb
+                            </span>
+
+                          </div>
+
+                          <div class="data-table-row">
+                            <span class="cell w-60">
+                              <i class="icon"><img src="./assets/images/twitter.png"></i>Twitter
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                              <span class="progress-bar">
+                                <span class="progress-counter" style="width: 15%"></span>
+                              </span>
+                            </span>
+
+                            <span class="cell w-20 text-center">
+                                200mb
+                            </span>
+
+                          </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div id="my-apps" class="container tab-pane fade"><br>
+                      <h3>Menu 2</h3>
+                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
               </div>
             </div>
-            <div class="col-xl-3 col-lg-4 coin-distribution">
-              <div class="card h-full">
-                <div class="card-body">
-                  <h4 class="header-title mb-0">Coin Distribution</h4>
-                  <div id="coin_distribution"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+
+            <right-column :resolution="resolution"></right-column>
           <!-- overview area end -->
           <!-- market value area start -->
-          <div class="row mt-5 mb-5">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-sm-flex justify-content-between align-items-center">
-                    <h4 class="header-title mb-0">Market Value And Trends</h4>
-                    <select class="custome-select border-0 pr-3">
-                      <option selected>Last 24 Hours</option>
-                      <option value="0">01 July 2018</option>
-                    </select>
-                  </div>
-                  <div class="market-status-table mt-4">
-                    <div class="table-responsive">
-                      <table class="dbkit-table">
-                        <tr class="heading-td">
-                          <td class="mv-icon">Logo</td>
-                          <td class="coin-name">Coin Name</td>
-                          <td class="buy">Buy</td>
-                          <td class="sell">Sells</td>
-                          <td class="trends">Trends</td>
-                          <td class="attachments">Attachments</td>
-                          <td class="stats-chart">Stats</td>
-                        </tr>
-                        <tr>
-                          <td class="mv-icon"><img src="assets/images/icon/market-value/icon1.png" alt="icon">
-                          </td>
-                          <td class="coin-name">Dashcoin</td>
-                          <td class="buy">30% <img src="assets/images/icon/market-value/triangle-down.png" alt="icon"></td>
-                          <td class="sell">20% <img src="assets/images/icon/market-value/triangle-up.png" alt="icon"></td>
-                          <td class="trends"><img src="assets/images/icon/market-value/trends-up-icon.png" alt="icon"></td>
-                          <td class="attachments">$ 56746,857</td>
-                          <td class="stats-chart">
-                            <canvas id="mvaluechart"></canvas>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mv-icon">
-                            <div class="mv-icon"><img src="assets/images/icon/market-value/icon2.png" alt="icon"></div>
-                          </td>
-                          <td class="coin-name">LiteCoin</td>
-                          <td class="buy">30% <img src="assets/images/icon/market-value/triangle-down.png" alt="icon"></td>
-                          <td class="sell">20% <img src="assets/images/icon/market-value/triangle-up.png" alt="icon"></td>
-                          <td class="trends"><img src="assets/images/icon/market-value/trends-down-icon.png" alt="icon"></td>
-                          <td class="attachments">$ 56746,857</td>
-                          <td class="stats-chart">
-                            <canvas id="mvaluechart2"></canvas>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mv-icon">
-                            <div class="mv-icon"><img src="assets/images/icon/market-value/icon3.png" alt="icon"></div>
-                          </td>
-                          <td class="coin-name">Euthorium</td>
-                          <td class="buy">30% <img src="assets/images/icon/market-value/triangle-down.png" alt="icon"></td>
-                          <td class="sell">20% <img src="assets/images/icon/market-value/triangle-up.png" alt="icon"></td>
-                          <td class="trends"><img src="assets/images/icon/market-value/trends-up-icon.png" alt="icon"></td>
-                          <td class="attachments">$ 56746,857</td>
-                          <td class="stats-chart">
-                            <canvas id="mvaluechart3"></canvas>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mv-icon">
-                            <div class="mv-icon"><img src="assets/images/icon/market-value/icon4.png" alt="icon"></div>
-                          </td>
-                          <td class="coin-name">Bitcoindash</td>
-                          <td class="buy">30% <img src="assets/images/icon/market-value/triangle-down.png" alt="icon"></td>
-                          <td class="sell">20% <img src="assets/images/icon/market-value/triangle-up.png" alt="icon"></td>
-                          <td class="trends"><img src="assets/images/icon/market-value/trends-up-icon.png" alt="icon"></td>
-                          <td class="attachments">$ 56746,857</td>
-                          <td class="stats-chart">
-                            <canvas id="mvaluechart4"></canvas>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- market value area end -->
-          <!-- row area start -->
-          <div class="row">
-            <!-- Live Crypto Price area start -->
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="header-title">Live Crypto Price</h4>
-                  <div class="cripto-live mt-5">
-                    <ul>
-                      <li>
-                        <div class="icon b">b</div> Bitcoin<span><i class="fa fa-long-arrow-up"></i>$876909.00</span></li>
-                      <li>
-                        <div class="icon l">l</div> Litecoin<span><i class="fa fa-long-arrow-up"></i>$29780.00</span></li>
-                      <li>
-                        <div class="icon d">d</div> Dashcoin<span><i class="fa fa-long-arrow-up"></i>$13276.00</span></li>
-                      <li>
-                        <div class="icon b">b</div> Bitcoindash<span><i class="fa fa-long-arrow-down"></i>$5684.890</span></li>
-                      <li>
-                        <div class="icon e">e</div> Euthorium<span><i class="fa fa-long-arrow-down"></i>$3890.98</span></li>
-                      <li>
-                        <div class="icon t">b</div> Tcoin<span><i class="fa fa-long-arrow-up"></i>$750.789</span></li>
-                      <li>
-                        <div class="icon b">b</div> Bitcoin<span><i class="fa fa-long-arrow-up"></i>$325.037</span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Live Crypto Price area end -->
-            <!-- trading history area start -->
-            <div class="col-lg-8 mt-sm-30 mt-xs-30">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-sm-flex justify-content-between align-items-center">
-                    <h4 class="header-title">Trading History</h4>
-                    <div class="trd-history-tabs">
-                      <ul class="nav" role="tablist">
-                        <li>
-                          <a class="active" data-toggle="tab" href="#buy_order" role="tab">Buy Order</a>
-                        </li>
-                        <li>
-                          <a data-toggle="tab" href="#sell_order" role="tab">Sell Order</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <select class="custome-select border-0 pr-3">
-                      <option selected>Last 24 Hours</option>
-                      <option value="0">01 July 2018</option>
-                    </select>
-                  </div>
-                  <div class="trad-history mt-4">
-                    <div class="tab-content" id="myTabContent">
-                      <div class="tab-pane fade show active" id="buy_order" role="tabpanel">
-                        <div class="table-responsive">
-                          <table class="dbkit-table">
-                            <tr class="heading-td">
-                              <td>Trading ID</td>
-                              <td>Time</td>
-                              <td>Status</td>
-                              <td>Amount</td>
-                              <td>Last Trade</td>
-                            </tr>
-                            <tr>
-                              <td>78211</td>
-                              <td>4.00 AM</td>
-                              <td>Pending</td>
-                              <td>$758.90</td>
-                              <td>$05245.090</td>
-                            </tr>
-                            <tr>
-                              <td>782782</td>
-                              <td>4.00 AM</td>
-                              <td>Pending</td>
-                              <td>$77878.90</td>
-                              <td>$7778.090</td>
-                            </tr>
-                            <tr>
-                              <td>89675978</td>
-                              <td>4.00 AM</td>
-                              <td>Pending</td>
-                              <td>$0768.90</td>
-                              <td>$0945.090</td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="sell_order" role="tabpanel">
-                        <div class="table-responsive">
-                          <table class="dbkit-table">
-                            <tr class="heading-td">
-                              <td>Trading ID</td>
-                              <td>Time</td>
-                              <td>Status</td>
-                              <td>Amount</td>
-                              <td>Last Trade</td>
-                            </tr>
-                            <tr>
-                              <td>8964978</td>
-                              <td>4.00 AM</td>
-                              <td>Pending</td>
-                              <td>$445.90</td>
-                              <td>$094545.090</td>
-                            </tr>
-                            <tr>
-                              <td>89675978</td>
-                              <td>4.00 AM</td>
-                              <td>Pending</td>
-                              <td>$78.90</td>
-                              <td>$074852945.090</td>
-                            </tr>
-                            <tr>
-                              <td>78527878</td>
-                              <td>4.00 AM</td>
-                              <td>Pending</td>
-                              <td>$0768.90</td>
-                              <td>$65465.090</td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- trading history area end -->
-          </div>
-          <!-- row area end -->
-          <div class="row mt-5">
-            <!-- latest news area start -->
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="header-title">Latest News</h4>
-                  <div class="letest-news mt-5">
-                    <div class="single-post mb-xs-40 mb-sm-40">
-                      <div class="lts-thumb">
-                        <img src="assets/images/blog/post-thumb1.jpg" alt="post thumb">
-                      </div>
-                      <div class="lts-content">
-                        <span>Admin Post</span>
-                        <h2><a href="blog.html">Sed ut perspiciatis unde omnis iste.</a></h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some...</p>
-                      </div>
-                    </div>
-                    <div class="single-post">
-                      <div class="lts-thumb">
-                        <img src="assets/images/blog/post-thumb2.jpg" alt="post thumb">
-                      </div>
-                      <div class="lts-content">
-                        <span>Admin Post</span>
-                        <h2><a href="blog.html">Sed ut perspiciatis unde omnis iste.</a></h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some...</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- latest news area end -->
-            <!-- exchange area start -->
-            <div class="col-xl-6 mt-md-30 mt-xs-30 mt-sm-30">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="header-title">Exchange</h4>
-                  <div class="exhcange-rate mt-5">
-                    <form action="#">
-                      <div class="input-form">
-                        <input type="text" value="0.76834">
-                        <span>BTC</span>
-                      </div>
-                      <div class="exchange-devider">To</div>
-                      <div class="input-form">
-                        <input type="text" value="5689.846">
-                        <span>USD</span>
-                      </div>
-                      <div class="exchange-btn">
-                        <button type="submit">Exchange Now</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- exchange area end -->
-          </div>
-          <!-- row area start-->
+
+
         </div>
       </div>
       <!-- main content area end -->
@@ -422,183 +266,13 @@
     </div>
     <!-- page container area end -->
     <!-- offset area start -->
-    <div class="offset-area">
-      <div class="offset-close"><i class="ti-close"></i></div>
-      <ul class="nav offset-menu-tab">
-        <li><a class="active" data-toggle="tab" href="#activity">Activity</a></li>
-        <li><a data-toggle="tab" href="#settings">Settings</a></li>
-      </ul>
-      <div class="offset-content tab-content">
-        <div id="activity" class="tab-pane fade in show active">
-          <div class="recent-activity">
-            <div class="timeline-task">
-              <div class="icon bg1">
-                <i class="fa fa-envelope"></i>
-              </div>
-              <div class="tm-title">
-                <h4>Rashed sent you an email</h4>
-                <span class="time"><i class="ti-time"></i>09:35</span>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-              </p>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg2">
-                <i class="fa fa-check"></i>
-              </div>
-              <div class="tm-title">
-                <h4>Added</h4>
-                <span class="time"><i class="ti-time"></i>7 Minutes Ago</span>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur.
-              </p>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg2">
-                <i class="fa fa-exclamation-triangle"></i>
-              </div>
-              <div class="tm-title">
-                <h4>You missed you Password!</h4>
-                <span class="time"><i class="ti-time"></i>09:20 Am</span>
-              </div>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg3">
-                <i class="fa fa-bomb"></i>
-              </div>
-              <div class="tm-title">
-                <h4>Member waiting for you Attention</h4>
-                <span class="time"><i class="ti-time"></i>09:35</span>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-              </p>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg3">
-                <i class="ti-signal"></i>
-              </div>
-              <div class="tm-title">
-                <h4>You Added Kaji Patha few minutes ago</h4>
-                <span class="time"><i class="ti-time"></i>01 minutes ago</span>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-              </p>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg1">
-                <i class="fa fa-envelope"></i>
-              </div>
-              <div class="tm-title">
-                <h4>Ratul Hamba sent you an email</h4>
-                <span class="time"><i class="ti-time"></i>09:35</span>
-              </div>
-              <p>Hello sir , where are you, i am egerly waiting for you.
-              </p>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg2">
-                <i class="fa fa-exclamation-triangle"></i>
-              </div>
-              <div class="tm-title">
-                <h4>Rashed sent you an email</h4>
-                <span class="time"><i class="ti-time"></i>09:35</span>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-              </p>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg2">
-                <i class="fa fa-exclamation-triangle"></i>
-              </div>
-              <div class="tm-title">
-                <h4>Rashed sent you an email</h4>
-                <span class="time"><i class="ti-time"></i>09:35</span>
-              </div>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg3">
-                <i class="fa fa-bomb"></i>
-              </div>
-              <div class="tm-title">
-                <h4>Rashed sent you an email</h4>
-                <span class="time"><i class="ti-time"></i>09:35</span>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-              </p>
-            </div>
-            <div class="timeline-task">
-              <div class="icon bg3">
-                <i class="ti-signal"></i>
-              </div>
-              <div class="tm-title">
-                <h4>Rashed sent you an email</h4>
-                <span class="time"><i class="ti-time"></i>09:35</span>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div id="settings" class="tab-pane fade">
-          <div class="offset-settings">
-            <h4>General Settings</h4>
-            <div class="settings-list">
-              <div class="s-settings">
-                <div class="s-sw-title">
-                  <h5>Notifications</h5>
-                  <div class="s-swtich">
-                    <input type="checkbox" id="switch1" />
-                    <label for="switch1">Toggle</label>
-                  </div>
-                </div>
-                <p>Keep it 'On' When you want to get all the notification.</p>
-              </div>
-              <div class="s-settings">
-                <div class="s-sw-title">
-                  <h5>Show recent activity</h5>
-                  <div class="s-swtich">
-                    <input type="checkbox" id="switch2" />
-                    <label for="switch2">Toggle</label>
-                  </div>
-                </div>
-                <p>The for attribute is necessary to bind our custom checkbox with the input.</p>
-              </div>
-              <div class="s-settings">
-                <div class="s-sw-title">
-                  <h5>Show your emails</h5>
-                  <div class="s-swtich">
-                    <input type="checkbox" id="switch3" />
-                    <label for="switch3">Toggle</label>
-                  </div>
-                </div>
-                <p>Show email so that easily find you.</p>
-              </div>
-              <div class="s-settings">
-                <div class="s-sw-title">
-                  <h5>Show Task statistics</h5>
-                  <div class="s-swtich">
-                    <input type="checkbox" id="switch4" />
-                    <label for="switch4">Toggle</label>
-                  </div>
-                </div>
-                <p>The for attribute is necessary to bind our custom checkbox with the input.</p>
-              </div>
-              <div class="s-settings">
-                <div class="s-sw-title">
-                  <h5>Notifications</h5>
-                  <div class="s-swtich">
-                    <input type="checkbox" id="switch5" />
-                    <label for="switch5">Toggle</label>
-                  </div>
-                </div>
-                <p>Use checkboxes when looking for yes or no answers.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
+
+    <a href="#" id="chat-cta" class="btn btn-lg"> <i class="chat-icon"></i> <span><b>Chat Claro </b><br>Necesita ayuda?</span></a>
+
+  </div>
+
   </div>
 </template>
 
@@ -606,17 +280,25 @@
   import SideBar from './assets/components/side-bar.vue';
   import TopHeader from './assets/components/top-header.vue';
   import TitleArea from './assets/components/title-area.vue';
+  import DataPlan from './assets/components/data-plan.vue';
+  import RightColumn from './assets/components/right-column.vue';
+  import DataUsageChart from './assets/components/data-usage-chart.vue';
+
+
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to  Vue.js App'
+      resolution:{windowSize: window.innerWidth,xs:512,sm:768,md:896,lg:1152,xl:1440}
     }
   },
   components:{
     SideBar,
     TopHeader,
     TitleArea,
+    DataPlan,
+    RightColumn,
+    DataUsageChart
   }
 }
 </script>

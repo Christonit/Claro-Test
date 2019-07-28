@@ -13,14 +13,14 @@
           <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav w-100">
               <li class="nav-item active">
-                <a class="nav-link d-flex align-items-center" href="#"><i class="sys-icon  "></i> <span>Resumen</span> <span class="sr-only">(current)</span></a>
+                <a class="nav-link d-flex align-items-center" href="#"><i class="sys-icon  resume"></i> <span>Resumen</span> <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Consultas</a>
+                <a class="nav-link d-flex align-items-center" href="#"><i class="sys-icon  consults"></i>Consultas</a>
               </li>
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administración</a>
+                <a class="nav-link d-flex align-items-center dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="sys-icon  admin"></i>Administración</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown03">
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
@@ -29,13 +29,18 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Pagos y recargas</a>
+                <a class="nav-link d-flex align-items-center" href="#"><i class="sys-icon  payment"></i>Pagos y recargas</a>
               </li>
             </ul>
 
           </div>
         </nav>
       </div>
+    </div>
+
+    <div id="tech-support-cta" >
+      <a href="#" class="btn btn-light "><i class="sys-icon client-support"></i>Soporte al cliente</a>
+
     </div>
   </div>
 </template>

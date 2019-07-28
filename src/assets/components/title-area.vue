@@ -1,20 +1,20 @@
 <template>
-  <div class="title-area px-4">
+  <div class="title-area">
 
-    <div class="row">
+    <div class="row mb-3">
       <div class="col-12">
         <div class="breadcrumbs-area clearfix">
           <h4 class="page-title pull-left"> </h4>
           <ul class="breadcrumbs pull-left">
-            <li><span>Dashboard</span></li>
+            <li><span>Resumen</span></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div  id='client' class="col-12 col-md-6 d-flex align-items-center flex-wrap">
-        <h2>Bienvenido Juan Ramirez </h2>
+    <div id='client' class="row">
+      <div  :class="resolution.windowSize <= resolution.xl ? 'col-md-6':'col-md-7'" class="col-12  d-flex align-items-center flex-wrap">
+        <h2>Bienvenido <span class="red-highlight">Christopher Santana</span></h2>
 
         <div id='client-phone' class="form-group my-3">
           <label for="select-phone" class="form-label mr-3">Telefono</label>
@@ -25,9 +25,11 @@
 
       </div>
 
-      <resume-navigation></resume-navigation>
+      <resume-navigation :class="resolution.windowSize <= resolution.xl ? 'col-md-6':'col-md-5'"></resume-navigation>
 
     </div>
+
+    <hr class="mx-3">
   </div>
 </template>
 
@@ -35,6 +37,7 @@
   import ResumeNavigation from './resume-navigation.vue';
   export default {
     name: "title-area",
+    props:['resolution'],
     components:{
       ResumeNavigation
     }

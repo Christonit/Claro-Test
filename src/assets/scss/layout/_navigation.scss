@@ -88,8 +88,10 @@
 
 
 .nav-secondary{
+
+  justify-content: space-between;
   .nav-item{
-    margin: 0 $size-8;
+    //margin: 0 $size-8;
     width: unset;
   }
   .nav-link{
@@ -99,11 +101,16 @@
     margin: 0;
     letter-spacing: 0;
 
+    @include breakpoint(xxxl){
+      margin: 0 $size-8;
+    }
+
+
     &.active{
       color: $red500;
 
       i{
-        background-color: $red500;
+        background-position-y: 22px;
       }
     }
 
@@ -112,11 +119,11 @@
       background: unset;
       i{
         color: $red500;
+        background-position-y: 22px;
       }
     }
 
     i{
-      background-color: $black400;
     }
 
 
@@ -130,4 +137,48 @@
 
   }
 
+}
+
+
+
+.nav-tabs{
+  border-color:$black100;
+  .nav-link{
+    border: none;
+    border-radius: 0;
+    color: $black800;
+    font-size: $size-5;
+    padding-top: $size-9;
+    padding-bottom: $size-9;
+    margin: 0;
+    text-align: center;
+
+    &:hover{
+      color: $teal500;
+      background: $teal100;
+    }
+
+    &.active{
+      color: $teal500;
+    }
+
+  }
+
+  .nav-item{
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+.breadcrumbs li span {
+  font-size: $size-7;
+  margin-right: 0;
+  color: $black300;
+  @include bold;
+  //text-transform: capitalize;
+  @include breakpoint(sm){
+    font-size: $size-6;
+  }
 }

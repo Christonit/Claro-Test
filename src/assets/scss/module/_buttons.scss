@@ -2,18 +2,26 @@
   padding: $size-9 $size-5;
   font-size: $size-6;
   @include bold;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+
+  &-primary{
+    background: $red500;
+    border-color: $red500;
+    border: none;
+    &:hover{
+      background: $red600;
+    }
+  }
 }
 
 
 .btn-link{
   color: $red500;
   &:hover{
-    color: $red700;
+    color: $red600;
     text-decoration: none;
   }
 }
-
 
 .btn-outline{
   &-primary{
@@ -27,3 +35,187 @@
     }
   }
 }
+
+.btn-light{
+background: $white-300;
+  color: $white;
+  border: none;
+  margin: 0 $size-3;
+  i{
+    margin-right:$size-7 ;
+  }
+  &:hover{
+    background-color: white;
+    color: $red500;
+    i{
+      background-position-x: 73px;
+    }
+  }
+}
+.btn{
+  &-outline-secondary{
+    border-color: $teal500;
+    color: $teal500;
+    &:hover{
+      background: $teal600;
+      border-color: $teal600;
+
+    }
+  }
+
+  &-link-secondary{
+    color: $teal500;
+    &:hover{
+      color: $teal600;
+    }
+
+  }
+
+
+}
+.toggle-icons{
+  button{
+    padding: 0.25rem 0.5rem;
+    font-size: unset;
+    line-height: 1;
+
+    background: none;
+    border-top-left-radius: $size-11!important;
+    border-top-right-radius: $size-11!important;
+    border-bottom-left-radius: $size-11!important;
+    border-bottom-right-radius: $size-11!important;
+    &.active{
+    background-color: $black100;
+
+    }
+
+
+    &:hover{
+      background: $body;
+    }
+    &:hover i{
+
+      background-position-y: 23px;
+    }
+
+
+
+  }
+}
+
+
+#chat-cta{
+  position: fixed;
+  bottom: 3rem;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+
+  background: white;
+  border: 3px solid $teal500;
+  border-radius:2.5rem 2.5rem 0 2.5rem;
+  padding: $size-6;
+  @include shadow-6;
+  .chat-icon{
+    width: 44px;
+    height: 36px;
+    background-image: url("./assets/images/chat-icon.svg");
+    display: block;
+    background-position:0 1px;
+    background-size:cover ;
+    margin:0 $size-5 0 $size-7;
+  }
+  span{
+    font-weight: normal;
+    text-align: left;
+    color: $black400;
+    line-height: 1.2;
+    margin-right: $size-8;
+  }
+
+  b{
+    color: $black800;
+  }
+
+  &:hover{
+    background: $teal500;
+
+    i{
+      background-position: 43px 1px;
+    }
+
+    span{
+      color: $white-shade;
+    }
+
+    b{
+      color: $white;
+    }
+  }
+
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: $size-3;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $black200;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: $size-5;
+  width: $size-5;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $red500;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $red500;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+

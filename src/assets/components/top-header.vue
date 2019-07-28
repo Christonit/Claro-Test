@@ -6,157 +6,31 @@
           <h4>Mi Claro</h4>
         <div class="search-box ml-5">
           <form action="#">
-            <input type="text" name="Charch" placeholder="Search..." required>
-            <i class="ti-search"></i>
+            <i class="material-icons">
+              search
+            </i>
+            <input type="text" name="Charch" placeholder="Buscar" required>
+
           </form>
         </div>
       </div>
       <!-- profile info & task notification -->
-      <div class="col-md-6 col-sm-4 clearfix">
-        <ul class="notification-area pull-right">
-          <li id="full-view"><i class="ti-fullscreen"></i></li>
-          <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
-          <li class="dropdown">
-            <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
-              <span>2</span>
-            </i>
-            <div class="dropdown-menu bell-notify-box notify-box">
-              <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
-              <div class="nofity-list">
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
-                  <div class="notify-text">
-                    <p>You have Changed Your Password</p>
-                    <span>Just Now</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
-                  <div class="notify-text">
-                    <p>New Commetns On Post</p>
-                    <span>30 Seconds ago</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb"><i class="ti-key btn-primary"></i></div>
-                  <div class="notify-text">
-                    <p>Some special like you</p>
-                    <span>Just Now</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
-                  <div class="notify-text">
-                    <p>New Commetns On Post</p>
-                    <span>30 Seconds ago</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb"><i class="ti-key btn-primary"></i></div>
-                  <div class="notify-text">
-                    <p>Some special like you</p>
-                    <span>Just Now</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
-                  <div class="notify-text">
-                    <p>You have Changed Your Password</p>
-                    <span>Just Now</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
-                  <div class="notify-text">
-                    <p>You have Changed Your Password</p>
-                    <span>Just Now</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="dropdown">
-            <i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span>3</span></i>
-            <div class="dropdown-menu notify-box nt-enveloper-box">
-              <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
-              <div class="nofity-list">
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb">
-                    <img src="assets/images/author/author-img1.jpg" alt="image">
-                  </div>
-                  <div class="notify-text">
-                    <p>Aglae Mayer</p>
-                    <span class="msg">Hey I am waiting for you...</span>
-                    <span>3:15 PM</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb">
-                    <img src="assets/images/author/author-img2.jpg" alt="image">
-                  </div>
-                  <div class="notify-text">
-                    <p>Aglae Mayer</p>
-                    <span class="msg">When you can connect with me...</span>
-                    <span>3:15 PM</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb">
-                    <img src="assets/images/author/author-img3.jpg" alt="image">
-                  </div>
-                  <div class="notify-text">
-                    <p>Aglae Mayer</p>
-                    <span class="msg">I missed you so much...</span>
-                    <span>3:15 PM</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb">
-                    <img src="assets/images/author/author-img4.jpg" alt="image">
-                  </div>
-                  <div class="notify-text">
-                    <p>Aglae Mayer</p>
-                    <span class="msg">Your product is completely Ready...</span>
-                    <span>3:15 PM</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb">
-                    <img src="assets/images/author/author-img2.jpg" alt="image">
-                  </div>
-                  <div class="notify-text">
-                    <p>Aglae Mayer</p>
-                    <span class="msg">Hey I am waiting for you...</span>
-                    <span>3:15 PM</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb">
-                    <img src="assets/images/author/author-img1.jpg" alt="image">
-                  </div>
-                  <div class="notify-text">
-                    <p>Aglae Mayer</p>
-                    <span class="msg">Hey I am waiting for you...</span>
-                    <span>3:15 PM</span>
-                  </div>
-                </a>
-                <a href="#" class="notify-item">
-                  <div class="notify-thumb">
-                    <img src="assets/images/author/author-img3.jpg" alt="image">
-                  </div>
-                  <div class="notify-text">
-                    <p>Aglae Mayer</p>
-                    <span class="msg">Hey I am waiting for you...</span>
-                    <span>3:15 PM</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="settings-btn">
-            <i class="ti-settings"></i>
-          </li>
-        </ul>
+      <div class="col-md-6 col-sm-4 d-flex justify-content-end align-items-center">
+        <a href="" class="btn btn-outline-secondary">Centros de atención</a>
+
+          <a class=" dropdown-toggle" href="#" id="notif-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="sys-icon notification"> <span></span></i>
+            <!--<div id="notification-center" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+              <!--<div class="notification-header"></div>-->
+              <!--<div class="notification-content"></div>-->
+            <!--</div>-->
+          </a>
+        
+            <span class="profile-settings">
+                <img src="../images/placeholder-img.png" alt="">
+            </span>
+
+
       </div>
     </div>
   </div>

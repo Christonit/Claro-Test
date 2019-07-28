@@ -2,7 +2,74 @@
 
     width: 20px;
     height: 20px;
-    background: $white;
     display: inline-block;
+  background-image: url("./assets/images/claro.svg");
+  background-position-y: -2px;
 
+}
+
+.notification{
+  background-position-x: -101px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-position-y: -51px;
+  span{
+      height: 8px;
+    width: 4px;
+    }
+
+}
+.resume{
+  background-position-x: 101px;
+  background-position-y: -27px;
+
+}
+
+.consults{
+  background-position-x: 73px;
+  background-position-y: -27px;
+
+}
+.admin{
+  background-position-x: 48px;
+  background-position-y: -27px;
+
+}
+.payment{
+  background-position-x: 21px;
+  background-position-y: -27px;
+
+}
+
+
+
+.bar-chart{
+  background-position-x: 129px;
+}
+.line-chart{
+  background-position-x: 157px;
+}
+
+
+.movil{
+  background-position-x: 4px;
+}
+.residencial{
+  background-position-x: -20px;
+}
+
+
+.internet{
+  background-position-x: -48px;
+}
+
+
+.tv{
+  background-position-x: -76px;
+}
+
+
+.client-support{
+  background-position-y: 0px;
+  background-position-x: 101px;
 }
