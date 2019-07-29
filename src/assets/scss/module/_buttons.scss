@@ -114,16 +114,35 @@ background: $white-300;
   background: white;
   border: 3px solid $teal500;
   border-radius:2.5rem 2.5rem 0 2.5rem;
-  padding: $size-6;
+  padding: $size-7 $size-9;
   @include shadow-6;
+
+  @include breakpoint(sm){
+    padding: $size-6;
+  }
+
+
+
+
   .chat-icon{
-    width: 44px;
-    height: 36px;
+
+    width: 32px;
+    height: 24px;
     background-image: url("./assets/images/chat-icon.svg");
     display: block;
     background-position:0 1px;
     background-size:cover ;
     margin:0 $size-5 0 $size-7;
+
+
+
+    @include breakpoint(sm){
+      width: 36px;
+      height: 36px;
+
+    }
+
+
   }
   span{
     font-weight: normal;
@@ -131,6 +150,11 @@ background: $white-300;
     color: $black400;
     line-height: 1.2;
     margin-right: $size-8;
+    display: none;
+    @include breakpoint(sm){
+      display: inline-block;
+
+    }
   }
 
   b{

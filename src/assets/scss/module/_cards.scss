@@ -3,6 +3,10 @@
   @include border-radius;
   background: $white;
   padding: $size-3;
+  //margin-bottom: ;
+  @include breakpoint(sm){
+    padding: $size-3;
+  }
 }
 
 
@@ -57,7 +61,34 @@ position: relative;
   margin-bottom: $size-3;
 }
 
+.data-usage-container{
 
+
+  .el-group:not(:first-child){
+    width: 100%;
+    margin-bottom: $size-5;
+
+
+    @include breakpoint(sm){
+      width: unset;
+      margin-bottom: 0;
+    }
+  }
+
+  .el-group:first-child{
+
+    flex-direction: column-reverse;
+    justify-content: left;
+    align-items: flex-start;
+    @include breakpoint(sm){
+
+      flex-direction: inherit;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  }
+}
 .usage-chart{
   min-height: 296px;
 }
@@ -72,19 +103,25 @@ position: relative;
 
   &-header{
     padding:1rem 1.5rem;
-    font-size: 1rem;
     @include bold;
     color: $black300;
 
     display: flex;
+    @include breakpoint(sm){
+
+    }
   }
 
   &-row{
-    padding: 0.65rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.65rem $size-9;
     color: $black800;
     display: flex;
     align-items: center;
+    @include breakpoint(sm){
+      padding: 0.65rem 1.5rem;
+
+
+    }
     &:nth-child(odd){
       background-color: $black100;
 
@@ -104,7 +141,10 @@ position: relative;
   .cell{
     @include font;
     font-weight: regular;
-    font-size: $size-5;
+    font-size: $size-6;
+    @include breakpoint(sm){
+      font-size: $size-5;
+    }
   }
 
   .icon{

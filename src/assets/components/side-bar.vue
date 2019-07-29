@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-menu">
+  <div  id='main-menu' class="sidebar-menu">
     <div class="branding">
       <a href="index.html" class="d-flex justify-content-center"><img src="../images/claro-logo-d.svg" class='logo' alt="logo"></a>
     </div>

@@ -21,7 +21,10 @@
   position: sticky;
   z-index: 9999;
   top: 0;
-  padding: $size-6 $size-4;
+  padding: $size-7 $size-5;
+  @include breakpoint(sm){
+    padding: $size-6 $size-4;
+  }
 }
 
 

@@ -1,0 +1,56 @@
+
+.footer-area {
+
+  text-align: center;
+  background: none;
+  display: flex;
+  justify-content:center;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  margin: $size-1;
+
+
+  @include breakpoint(sm){
+    justify-content:space-between;
+    flex-direction: unset;
+    margin: $size-3 $size-3 $size-9;
+
+
+  }
+
+  p, a{
+    font-size: $size-7;
+    color: $black300;
+    letter-spacing: 0;
+
+  }
+
+  p{
+    font-weight: normal;
+    @include breakpoint(sm){}
+  }
+
+
+
+  ul{
+    margin-bottom: 1rem;
+    @include breakpoint(sm){
+      display: flex;
+      margin:0;
+
+    }
+  }
+
+  a{
+    padding: $size-9;
+    display: block;
+    &:hover{
+      color: $black500;
+    }
+
+    @include breakpoint(sm){
+      padding: $size-9 $size-5;
+    }
+  }
+
+}

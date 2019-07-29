@@ -1,7 +1,20 @@
+.mobile-logo{
+  height: $size-1;
+  img{
+    position: relative;
+    height: inherit;
+  }
+}
+
 .data-plan{
-  margin-bottom: $size-1;
+  .card{
+    margin-bottom: $size-3;
+  }
 
+  @include breakpoint(sm){
+    margin-bottom: 0;
 
+  }
 
   @include breakpoint(xxxl){
 
@@ -13,9 +26,10 @@
 #client{padding-right: 0}
 #client-phone{
   margin-bottom: 0;
+  width: 100%;
+
   @include breakpoint(sm){
-    max-width: 304px;
-    width: 100%;
+    max-width: 344px;
   }
 
   @include breakpoint(xxxl){
@@ -34,10 +48,12 @@
     @include bold;
     @include border;
     @include border-radius;
-
+    padding:  $size-11 $size-5;
+    height: unset;
+    font-size: 1.15rem;
     @include breakpoint(sm){
       font-size: $size-4;
-      padding: 0 1rem;
+      padding: $size-10 1rem;
 
     }
 
@@ -52,13 +68,20 @@
 }
 
 #resume-navigation{
-  padding-left: 0;
+  padding: 0;
+  overflow-x: scroll;
+  background: $white;
+  @include border-bottom;
 
   @include breakpoint(sm){
     display: flex;
     align-items:top ;
     justify-content:end;
     padding-top: 0.25rem;
+    padding-left: 0;
+    overflow-x: unset;
+    border-bottom: unset;
+    background: unset;
   }
 
   @include breakpoint(xxxl){
@@ -80,7 +103,10 @@
   text-align: center;
   line-height: 1.5;
 
-  margin: 0 $size-3 ;
+  margin-right: $size-3;
+  @include breakpoint(sm){
+    margin: 0 $size-3;
+  }
 
   &:hover i {
 
@@ -122,6 +148,9 @@
   &:hover{
     border: 1px solid $red100;
   }
+  image{
+    height: 100%;
+  }
 }
 
 #tech-support-cta{
@@ -139,3 +168,5 @@
     padding: $size-8;
   }
 }
+
+

@@ -25,11 +25,11 @@
 
       </div>
 
-      <resume-navigation :class="resolution.windowSize <= resolution.xl ? 'col-md-6':'col-md-5'"></resume-navigation>
+      <resume-navigation v-if="!isMobile" :class="resolution.windowSize <= resolution.xl ? 'col-md-6':'col-md-5'"></resume-navigation>
 
     </div>
 
-    <hr class="mx-3">
+    <hr >
   </div>
 </template>
 
@@ -37,7 +37,7 @@
   import ResumeNavigation from './resume-navigation.vue';
   export default {
     name: "title-area",
-    props:['resolution'],
+    props:['resolution','isMobile'],
     components:{
       ResumeNavigation
     }

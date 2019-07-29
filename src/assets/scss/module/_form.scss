@@ -1,4 +1,5 @@
 label{
+  display: inline-block;
   @include bold;
   color: $black400;
   letter-spacing: 1px;
@@ -16,7 +17,11 @@ label{
   select{
     max-width: 112px;
     min-width: 112px;
-    height: unset!important;
+    height: 32px;
+    background: $white;
+    @include breakpoint(sm){
+      height: 36px;
+    }
     padding: 0.47rem $size-5;
 
   }
@@ -28,8 +33,10 @@ label{
 padding:$size-10 $size-5;
   min-width: 96px;
 
+
   select{
     font-size: $size-6;
+
   }
 }
 
@@ -40,14 +47,28 @@ input{
 
 select{
   font-size: 1rem;
+  background: $white;
+  min-height: $size-1;
+  @include breakpoint(sm){
+    min-height: 2.25rem;
+  }
 }
 
 .form-group{
   margin: 0;
 }
-
+.search-box{
+  position: relative;
+}
 
 .search-box input{
+
+  width: 350px;
+  border-radius: 2rem;
+  border: none;
+  padding-right: 40px;
+  letter-spacing: 0;
+
   padding-left: 3rem;
   height: 2.25rem;
   @include border-radius;
