@@ -5,6 +5,10 @@
   padding: $size-3;
   //margin-bottom: ;
   @include breakpoint(sm){
+    padding: $size-5;
+  }
+
+  @include breakpoint(xxl){
     padding: $size-3;
   }
 }

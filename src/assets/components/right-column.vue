@@ -5,9 +5,9 @@
     <div class="vertical-cards ">
 
       <div class="w-100 d-flex align-items-center justify-content-between mb-1">
-        <h6 class="ml-3">Mi factura</h6>
+        <h6 class="ml-3">Mi factura </h6>
 
-        <a href="#" class="btn btn-link">Histórico de pagos</a>
+        <a href="#" v-if="!isTablet" class="btn btn-link">Histórico de pagos</a>
 
       </div>
       <div class="card card-report">
@@ -48,8 +48,8 @@
         <hr>
 
 
-        <div class="el-group mt-2 mb-2">
-          <a href="#" class="btn btn-outline-secondary">Descargar factura</a>
+        <div class="el-group mt-2 mb-2" :class="isTablet ? 'justify-content-around' :''">
+          <a href="#" class="btn btn-outline-secondary" :class="isTablet ? 'mb-2' :''">Descargar factura</a>
           <a href="#" class="btn btn-link-secondary">Ver factura</a>
 
 
@@ -76,7 +76,7 @@
 
         <div class="card-info mb-2">
 
-          <span class="card-label">Ultima Fecha de Cambiazo</span>
+          <span class="card-label">Última Fecha de Cambiazo</span>
           <h5 class="report-value">Marzo 13, 2019</h5>
         </div>
 
@@ -84,8 +84,8 @@
 
         <div class="el-group mt-2 mb-2 justify-content-between">
 
-          <div class="w-50 has-border-right">
-            <span class="card-label">último Cambiazo</span>
+          <div class="" :class="(isTablet)? ' ':'w-50 has-border-right'">
+            <span class="card-label">Último Cambiazo</span>
             <p class="black">Hace 4 meses</p>
           </div>
 
@@ -118,11 +118,17 @@
 
 <script>
     export default {
-        name: "right-column",
-      props:['resolution']
+      name: "right-column",
+      props: ['resolution'],
+      computed: {
+
+
+        isTablet() {
+          if (this.resolution.windowSize < this.resolution.lg && this.resolution.windowSize > this.resolution.md) {
+            return true;
+          }
+
+        }
+      }
     }
 </script>
-
-<style scoped>
-
-</style>

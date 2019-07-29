@@ -13,11 +13,11 @@
     </div>
 
     <div id='client' class="row">
-      <div  :class="resolution.windowSize <= resolution.xl ? 'col-md-6':'col-md-7'" class="col-12  d-flex align-items-center flex-wrap">
-        <h2>Bienvenido <span class="red-highlight">Christopher Santana</span></h2>
+      <div  :class="classPrint" class="col-12  d-flex align-items-center flex-wrap">
+        <h2>Bienvenido <span class="red-highlight">Juan Ramírez</span></h2>
 
         <div id='client-phone' class="form-group my-3">
-          <label for="select-phone" class="form-label mr-3">Telefono</label>
+          <label for="select-phone" class="form-label mr-3">Teléfono</label>
           <select class="form-control-lg" id="select-phone">
             <option value="8297813995">829-781-3995</option>
           </select>
@@ -40,10 +40,25 @@
     props:['resolution','isMobile'],
     components:{
       ResumeNavigation
-    }
+    },computed:{
+
+      classPrint(){
+        if(this.resolution.windowSize <= this.resolution.lg){
+          return '';
+          // return this.resolution.windowSize;
+        }
+
+        if(this.resolution.windowSize <= this.resolution.xl){
+          return 'col-md-6';
+          // return this.resolution.windowSize;
+        }
+
+        if(this.resolution.windowSize > this.resolution.xl){
+          return 'col-md-7';
+          // return this.resolution.windowSize;
+        }
+
+      }
+  }
   }
 </script>
-
-<style scoped>
-
-</style>

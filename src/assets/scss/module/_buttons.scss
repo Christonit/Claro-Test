@@ -105,19 +105,25 @@ background: $white-300;
 
 
 #chat-cta{
-  position: fixed;
-  bottom: 3rem;
-  right: 24px;
+  bottom: 2rem;
   z-index: 9999;
   display: flex;
-
+  position: sticky;
+  margin-left: auto;
+  margin-right: 24px;
   background: white;
   border: 3px solid $teal500;
   border-radius:2.5rem 2.5rem 0 2.5rem;
   padding: $size-7 $size-9;
+  max-width: 81px;
   @include shadow-6;
 
   @include breakpoint(sm){
+    position: fixed;
+    right: 24px;
+    bottom: 3rem;
+    max-width: unset;
+    margin: unset;
     padding: $size-6;
   }
 
@@ -128,7 +134,7 @@ background: $white-300;
 
     width: 32px;
     height: 24px;
-    background-image: url("./assets/images/chat-icon.svg");
+    background-image: url("/dist/chat-icon.svg");
     display: block;
     background-position:0 1px;
     background-size:cover ;
@@ -137,7 +143,7 @@ background: $white-300;
 
 
     @include breakpoint(sm){
-      width: 36px;
+      width: 44px;
       height: 36px;
 
     }
@@ -165,7 +171,10 @@ background: $white-300;
     background: $teal500;
 
     i{
-      background-position: 43px 1px;
+      background-position: 31px 0px;
+      @include breakpoint(sm){
+        background-position: 43px 1px;
+      }
     }
 
     span{

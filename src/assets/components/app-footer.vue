@@ -19,7 +19,3 @@
         name: "app-footer"
     }
 </script>
-
-<style scoped>
-
-</style>

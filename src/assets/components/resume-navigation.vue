@@ -24,7 +24,3 @@
         name: "resume-navigation"
     }
 </script>
-
-<style scoped>
-
-</style>

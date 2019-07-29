@@ -1,49 +1,42 @@
 <template>
   <div id="app">
     <div class="page-container">
-      <!-- sidebar menu area start -->
+
       <side-bar :is-mobile="isMobile"></side-bar>
-      <!-- sidebar menu area end -->
-      <!-- main content area start -->
+
       <div class="main-content">
-        <!-- header area start -->
+
         <top-header></top-header>
 
-        <!--<div class="row">-->
-          <resume-navigation v-if="isMobile" class="col-12"></resume-navigation>
-        <!--</div>-->
+        <resume-navigation v-if="isMobile" class="col-12"></resume-navigation>
 
-        <!-- header area end -->
-        <!-- page title area start -->
-              <title-area :is-mobile="isMobile" :resolution="resolution"></title-area>
-        <!-- page title area end -->
+        <title-area :is-mobile="isMobile" :resolution="resolution"></title-area>
         <div class="main-content-inner">
-          <!-- sales report area start -->
-            <data-plan v-if="resolution.windowSize <= resolution.xl" :resolution="resolution" class="row"></data-plan>
-          <!-- sales report area end -->
-          <!-- overview area start -->
+
+          <data-plan v-if="resolution.windowSize <= resolution.xl" :resolution="resolution" class="row"></data-plan>
           <div class="row">
             <data-plan  class="col-12 col-lg-3 px-0" :resolution='resolution' v-if="resolution.windowSize > resolution.xl"></data-plan>
 
-            <data-usage-measurement :resolution="resolution" :is-mobile="isMobile"></data-usage-measurement>
+            <data-usage-measurement  :class="isMobile ? 'mt-2':''" :resolution="resolution" :is-mobile="isMobile"></data-usage-measurement>
 
 
-            <right-column :resolution="resolution"></right-column>
-          <!-- overview area end -->
-          <!-- market value area start -->
+            <right-column :class="isMobile ? 'mt-4':''" :resolution="resolution"></right-column>
+            <!-- overview area end -->
 
 
+
+
+
+          </div>
         </div>
-      </div>
-      <!-- main content area end -->
-      <!-- footer area start-->
-      <app-footer></app-footer>
-      <!-- footer area end-->
-    </div>
-    <!-- page container area end -->
-    <!-- offset area start -->
 
-  </div>
+        <!-- footer area start-->
+        <app-footer></app-footer>
+        <!-- footer area end-->
+
+      </div>
+
+    </div>
 
     <a href="#" id="chat-cta" class="btn btn-lg"> <i class="chat-icon"></i> <span><b>Chat Claro </b><br>Necesita ayuda?</span></a>
 
@@ -62,32 +55,39 @@
   import RightColumn from './assets/components/right-column.vue';
   import ResumeNavigation from './assets/components/resume-navigation.vue';
 
+  window.onresize = function(){
 
-export default {
-  name: 'app',
-  data () {
-    return {
-      resolution:{windowSize: window.innerWidth,xs:512,sm:768,md:896,lg:1152,xl:1440}
-    }
-  },
-  components:{
-    SideBar,
-    TopHeader,
-    ResumeNavigation,
-    TitleArea,
-    DataPlan,
-    RightColumn,
-    DataUsageMeasurement,
-    AppFooter
-  },computed:{
-    isMobile(){
-      return this.resolution.windowSize <= this.resolution.sm;
-    }
-  },
-}
+    setTimeout( ()=>{
+      location.reload();
+
+    },2000)
+  }
+
+  export default {
+    name: 'app',
+    data () {
+      return {
+        resolution:{windowSize: screen.width,xs:512,sm:768,md:896,lg:1152,xmd:1280,xl:1440}
+      }
+    },
+    components:{
+      SideBar,
+      TopHeader,
+      ResumeNavigation,
+      TitleArea,
+      DataPlan,
+      RightColumn,
+      DataUsageMeasurement,
+      AppFooter
+    },computed:{
+      isMobile(){
+        return this.resolution.windowSize <= this.resolution.sm;
+      }
+    },
+  }
 </script>
 
 <style lang="scss">
-
   @import "./assets/scss/style.scss";
 </style>
+

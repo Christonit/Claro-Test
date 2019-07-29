@@ -33,17 +33,16 @@
         <!-- Tab panes -->
         <div class="tab-content">
           <div id="home" class="container tab-pane active">
-            <div class="el-group mb-4">
+            <div class="el-group ">
 
-              <div class="form-group d-flex align-items-center options-input ">
+              <div class="form-group d-flex align-items-center options-input mb-3 mb-xl-4">
                 <label  class="">Fecha</label>
                 <input type="date"  class="form-control">
               </div>
 
 
 
-
-              <div class="el-group">
+              <div class="el-group mb-3 mb-xl-4">
 
                 <div class="form-group d-flex align-items-center options-input mr-4">
                   <label  class="">Filtrar</label>
@@ -240,7 +239,3 @@
       }
     }
 </script>
-
-<style scoped>
-
-</style>

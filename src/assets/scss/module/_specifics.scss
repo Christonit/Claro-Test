@@ -3,6 +3,7 @@
   img{
     position: relative;
     height: inherit;
+    top: -3px;
   }
 }
 
@@ -49,9 +50,10 @@
     @include border;
     @include border-radius;
     padding:  $size-11 $size-5;
-    height: unset;
+    height: 32px;
     font-size: 1.15rem;
     @include breakpoint(sm){
+      height: 40px;
       font-size: $size-4;
       padding: $size-10 1rem;
 
@@ -74,7 +76,7 @@
   @include border-bottom;
 
   @include breakpoint(sm){
-    display: flex;
+    display: block;
     align-items:top ;
     justify-content:end;
     padding-top: 0.25rem;
@@ -85,8 +87,11 @@
   }
 
   @include breakpoint(xxxl){
-    align-items:center;
+
+    display: flex;
+    align-items: flex-start;
     padding-top: 0rem;
+    justify-content: flex-end;
   }
 
 

@@ -54,7 +54,3 @@
         name: "top-header"
     }
 </script>
-
-<style scoped>
-
-</style>

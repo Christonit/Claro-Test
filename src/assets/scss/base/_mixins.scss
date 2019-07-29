@@ -4,9 +4,8 @@ $breakpoints: (
 	md: 896px,
 	lg: 1152px,
 	xl: 1280px,
-	xxl: 1360px,
+	xxl: 1300px,
 	xxxl: 1441px
-
 
 );
 
@@ -25,20 +24,6 @@ $breakpoints: (
     }
 }
 
-@mixin max-breakpoint( $breakpoint ) {
-    @if map-has-key( $breakpoints, $breakpoint ) {
-        @media ( max-width: #{ map-get( $breakpoints, $breakpoint ) } ) {
-            @content;
-        }
-    } @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
-        @media (max-width: $breakpoint ) {
-            @content;
-        }
-    } @else {
-        @warn "No value could be retrieved from `#{$breakpoint}`. "
-               + "It is either not defined in the `$breakpoints` map, or it is an invalid number of px, em, or rem.";
-    }
-}
 
 
 @mixin font{

@@ -2,12 +2,12 @@
 .footer-area {
 
   text-align: center;
-  background: none;
   display: flex;
   justify-content:center;
   flex-direction: column-reverse;
   flex-wrap: wrap;
   margin: $size-1;
+
 
 
   @include breakpoint(sm){
@@ -33,7 +33,10 @@
 
 
   ul{
+
     margin-bottom: 1rem;
+    padding-left: 0;
+
     @include breakpoint(sm){
       display: flex;
       margin:0;
